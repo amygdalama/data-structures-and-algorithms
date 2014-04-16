@@ -37,7 +37,7 @@
 
 * float - An error?
         
-        > If the parameter to the constructor is a string, as with float( 3.14 ), it attempts to parse that string as a floating-point value, raising a ValueError as an exception.
+> If the parameter to the constructor is a string, as with float( 3.14 ), it attempts to parse that string as a floating-point value, raising a ValueError as an exception.
 
     But we can:
 
