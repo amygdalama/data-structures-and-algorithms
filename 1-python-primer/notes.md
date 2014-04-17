@@ -67,3 +67,16 @@
         True
 
 * can I write a single python expression using every operator type listed in the operator precedence table?
+
+## 1.5 - Functions
+
+* This:
+    
+        >>> l = [1, 2, 3]
+        >>> def foo(l):
+        ...     l.append(4)
+        ... 
+        >>> foo(l)
+        >>> l
+        [1, 2, 3, 4]
+
