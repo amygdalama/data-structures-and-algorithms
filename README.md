@@ -1,0 +1,1 @@
+Notes and exercises from the book [Data Structures and Algorithms in Python](http://books.google.com/books/about/Data_Structures_and_Algorithms_in_Python.html?id=2UccAAAAQBAJ), organized by Chapter.
