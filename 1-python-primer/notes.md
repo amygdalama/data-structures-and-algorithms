@@ -80,3 +80,53 @@
         >>> l
         [1, 2, 3, 4]
 
+## 1.8 - Iterators and Generators
+
+* I made a for loop!
+
+        >>> def for_loop(iterable):
+        ...     try:
+        ...             i = iter(iterable)
+        ...             print(next(i))
+        ...             for_loop(i)
+        ...     except StopIteration:
+        ...             pass
+        ... 
+        >>> for_loop('cat')
+        c
+        a
+        t
+
+    Or I could do it like this, which doesn't create a new iterator instance every time:
+
+    >>> def for_loop(iterator):
+    ...     try:
+    ...             print(next(iterator))
+    ...             for_loop(iterator)
+    ...     except TypeError:
+    ...             iterator = iter(iterator)
+    ...             for_loop(iterator)
+    ...     except StopIteration:
+    ...             pass
+    ... 
+
+* Ah, iterators keep track of the index of the original iterable. So, if the original iterable is mutable, and you mutate it, the iterator reflects the changes:
+
+        >>> l = list('i am a cat')
+        >>> i = iter(l)
+        >>> for j in range(len(l)):
+        ...     if j % 2 == 0:
+        ...             l[j] = j
+        ...     print(next(i))
+        ... 
+        0
+         
+        2
+        m
+        4
+        a
+        6
+        c
+        8
+        t
+
