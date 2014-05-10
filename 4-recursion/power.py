@@ -6,6 +6,18 @@ def power(x, n):
     else:
         return x * power(x, n-1)
 
+def power_faster(x, n):
+    """Compute x raised to the nth power using repeated squaring."""
+
+    if n == 0:
+        return 1
+    else:
+        partial = power_faster(x, n//2)
+        result = partial * partial
+        if n % 2 == 1:
+            result *= x
+        return result
+
 if __name__ == '__main__':
     tests = (
         (1, 0),
@@ -14,7 +26,7 @@ if __name__ == '__main__':
         (18, 2)
         )
     for x, n in tests:
-        if power(x, n) == pow(x, n):
+        if power_faster(x, n) == pow(x, n):
             print("Success!")
         else:
             print("==========")
